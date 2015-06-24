@@ -22,7 +22,7 @@ function helixmoney_link($params) {
 
     # Gateway Specific Variables
     $gateway_shop_id = $params['shop_id'];
-    $gateway_password = $params['password'];
+    $gateway_password1 = $params['password1'];
     $gateway_paysystem = $params['paysystem_id'];
     $gateway_operation = $params['invoiceid']; // invoice ID
 
@@ -35,7 +35,7 @@ function helixmoney_link($params) {
     $amount = $params['amount']; # Format: ##.##
 
     # Your variables
-    $hash = md5($gateway_shop_id.':'.$gateway_paysystem.':'.$gateway_operation.':'.$amount.':'.$gateway_password);  // Shop subscription
+    $hash = md5($gateway_shop_id.':'.$gateway_paysystem.':'.$gateway_operation.':'.$amount.':'.$gateway_password1);  // Shop subscription
     $note = 'Client ID - '.$params['clientdetails']['userid'].'; Client name -'.$params['clientdetails']['firstname'].' '.$params['clientdetails']['lastname'].'; Invoice ID - '.$invoiceid = $params['invoiceid'].'; Description - '.$params["description"];
 
 
